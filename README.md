@@ -14,8 +14,8 @@ python scaffold.py
 - [x] **2.** compute_iqr_bounds
 - [x] **3.** clip_columns
 - [x] **4.** make_ratio_feature
-- [ ] **5.** append_column
-- [ ] **6.** one_hot_encode
+- [x] **5.** append_column
+- [x] **6.** one_hot_encode
 - [ ] **7.** fit_standardizer
 - [ ] **8.** apply_standardizer
 - [ ] **9.** add_bias_column

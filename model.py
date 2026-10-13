@@ -44,11 +44,38 @@ def make_ratio_feature(numerator, denominator, eps=1e-8):
     ratio_feature = numerator / (denominator + eps)
     return ratio_feature
 
-# Step 5 - append_column (not yet solved)
-# TODO: implement
+# Step 5 - append_column
+def append_column(X, col):
+    # TODO: Horizontally append one 1-D feature column onto a design matrix.
+    X_added = np.concatenate((X, col.reshape(-1,1)), 1)
+    return X_added
 
-# Step 6 - one_hot_encode (not yet solved)
-# TODO: implement
+# Step 6 - one_hot_encode
+def one_hot_encode(labels):
+    # TODO: Convert a 1-D array of categorical labels into a dense binary one-hot matrix.
+    idx = 0
+    label_dic = {}
+    for label in labels:
+        if label_dic.get(label) == None:
+            label_dic[label] = idx
+            idx += 1
+    
+    unique = []
+    for label in label_dic.keys():
+        unique.append(label)
+    
+    unique = sorted(unique)
+    idx = 0
+    for label in unique:
+        label_dic[label] = idx
+        idx += 1
+    
+    N, C = len(labels), len(label_dic)
+    mat = np.zeros((N,C))
+    for i, label in enumerate(labels):
+        one = label_dic[label]
+        mat[i][one] = 1.0
+    return mat
 
 # Step 7 - fit_standardizer (not yet solved)
 # TODO: implement
