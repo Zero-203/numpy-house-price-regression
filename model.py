@@ -77,8 +77,12 @@ def one_hot_encode(labels):
         mat[i][one] = 1.0
     return mat
 
-# Step 7 - fit_standardizer (not yet solved)
-# TODO: implement
+# Step 7 - fit_standardizer
+def fit_standardizer(X):
+    # TODO: Compute per-column mean and std used to standardize features...
+    x_mean, x_std = np.mean(X, axis=0), np.std(X, axis=0)
+    x_std = np.where(x_std==0, np.ones_like(x_std), x_std)
+    return x_mean, x_std
 
 # Step 8 - apply_standardizer (not yet solved)
 # TODO: implement
