@@ -98,8 +98,14 @@ def add_bias_column(X):
     X_bias = np.concatenate((bias_col, X), axis=1)
     return X_bias
 
-# Step 10 - make_shuffled_indices (not yet solved)
-# TODO: implement
+# Step 10 - make_shuffled_indices
+import numpy as np
+
+def make_shuffled_indices(n_samples, seed):
+    # TODO: Create a reproducibly shuffled permutation of row indices.
+    np.random.seed(seed)
+    new_permutation = np.random.permutation(n_samples)
+    return new_permutation
 
 # Step 11 - partition_indices (not yet solved)
 # TODO: implement
